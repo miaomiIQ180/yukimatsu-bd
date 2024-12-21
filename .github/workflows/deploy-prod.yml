@@ -1,0 +1,37 @@
+name: Deploy production
+
+on:
+  push:
+    tags:
+      - "^v[0-9]+.[0-9]+.[0-9]+$"
+  release:
+    types: [published]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout Main
+        uses: actions/checkout@v4
+
+      # Install PNPM
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm and dependicies
+        with:
+          run_install: true
+
+      - name: Build the project
+        run: pnpm build
+
+      - name: Handle 404
+        run: cp ./dist/index.html ./dist/404.html
+
+      # use actions-gh-pages to deploy dist to gh-pages
+      - name: Deploy Production
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # github will auto-generate a token for this job and use it
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

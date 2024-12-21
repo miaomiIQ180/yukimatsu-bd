@@ -1,19 +1,19 @@
 {
-  "name": "vue3-ts-base",
+  "name": "yukimatsu-bd",
   "type": "module",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@9.15.1",
   "description": "A nice template for starting a vue-ts project ",
   "author": "Oliver Mak",
   "license": "MIT",
-  "homepage": "https://github.com/oliver139/vue3-ts-base",
+  "homepage": "https://miaomiIQ180.github.io/yukimatsu-bd",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliver139/vue3-ts-base"
+    "url": "https://github.com/miaomiIQ180/yukimatsu-bd"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "vite",
@@ -30,11 +30,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^12.0.0",
-    "pinia": "^2.3.0",
-    "vue": "^3.5.13",
-    "vue-gtag": "^2.0.1",
-    "vue-i18n": "^10.0.5",
-    "vue-router": "^4.5.0"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@antfu/ni": "^0.23.1",
