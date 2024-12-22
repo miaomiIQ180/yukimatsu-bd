@@ -24,7 +24,7 @@
     <GiftBox v-if="showGiftBox" @gift-opened="showGiftBox = false" />
   </Transition>
 
-  <div v-if="!coverMe" class="black-mask" />
+  <div v-if="coverMe" class="black-mask" />
 </template>
 
 <script setup lang="ts">
