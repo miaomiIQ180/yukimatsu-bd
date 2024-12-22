@@ -5,9 +5,12 @@ html, body, #app {
 }
 
 html {
-  background: #000 url("/picture2.jpg") center center no-repeat;
+  background: #000 center center no-repeat;
   background-size: cover;
   overflow: hidden;
+  &.box-opened {
+    background-image: url("/picture2.jpg");
+  }
 }
 body {
   background: rgba(93, 66, 114, 0.8);

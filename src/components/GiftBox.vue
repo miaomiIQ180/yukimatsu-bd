@@ -36,6 +36,7 @@ function handleClick() {
   isOpened.value = true;
   showClickMe.value = false;
   useTimeoutFn(() => {
+    document.documentElement.classList.add("box-opened");
     emit("giftOpened");
   }, 1500);
 }
