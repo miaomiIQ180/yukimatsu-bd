@@ -57,8 +57,7 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture,
-.iconify {
+picture  {
   max-width: 100%;
   display: block;
 }
@@ -87,6 +86,7 @@ button:hover, a:hover {
 
 /* No need pointer event on iconify svg */
 .iconify {
+  display: block;
   pointer-events: none;
 }
 
