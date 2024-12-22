@@ -17,10 +17,8 @@ import VueViewer from "v-viewer";
 
 // #region : route guard
 const { pw } = useUrlSearchParams();
-console.log(import.meta.env.MODE);
 if (import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!") {
   window.location.replace("/");
-  throw new Error("Password not match");
 }
 // #endregion
 

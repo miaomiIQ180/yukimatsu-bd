@@ -23,13 +23,29 @@
   <Transition name="fade">
     <GiftBox v-if="showGiftBox" @gift-opened="showGiftBox = false" />
   </Transition>
+
+  <div v-if="!coverMe" class="black-mask" />
 </template>
 
 <script setup lang="ts">
 const showGiftBox = ref(true);
+
+// Cover things if pw not match
+const { pw } = useUrlSearchParams();
+const coverMe = import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!";
 </script>
 
 <style lang="scss" scoped>
+.black-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999;
+}
+
 .main-content {
   --margin: 1.5rem;
   font-size: 1.25rem;
