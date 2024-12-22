@@ -15,6 +15,14 @@ import "viewerjs/dist/viewer.css";
 import VueViewer from "v-viewer";
 // #endregion
 
+// #region : route guard
+const { pw } = useUrlSearchParams();
+console.log(import.meta.env.MODE);
+if (import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!") {
+  window.location.replace("/");
+}
+// #endregion
+
 const app = createApp(App);
 
 // Plugins
