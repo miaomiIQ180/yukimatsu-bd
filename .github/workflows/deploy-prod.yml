@@ -35,3 +35,4 @@ jobs:
           # github will auto-generate a token for this job and use it
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true

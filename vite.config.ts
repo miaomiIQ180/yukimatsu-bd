@@ -11,6 +11,7 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/yukimatsu-bd/",
   css: {
     preprocessorOptions: {
       scss: {
