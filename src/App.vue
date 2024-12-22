@@ -33,6 +33,9 @@ const showGiftBox = ref(true);
 // Cover things if pw not match
 const { pw } = useUrlSearchParams();
 const coverMe = import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!";
+
+const asd = useImage({ src: "/picture2.jpg" });
+console.log(`🚀 ~ asd:`, asd);
 </script>
 
 <style lang="scss" scoped>
@@ -59,8 +62,9 @@ const coverMe = import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!
 
 .main-content__img {
   img {
-    width: min(40rem, 100%);
+    width: min(25rem, 100%);
     margin: auto;
+    cursor: pointer;
   }
 }
 .main-content__text {
@@ -74,12 +78,12 @@ const coverMe = import.meta.env.MODE !== "development" && pw !== "Yukimatsu1225!
     .main-content__img {
       img {
         position: fixed;
-        left: var(--margin);
+        left: calc(25% + var(--margin) * .25);
         top: 50%;
-        width: calc(50% - var(--margin) * 1.5);
+        width: auto;
+        max-width: calc(50% - var(--margin) * 1.5);
         max-height: calc(100% - var(--margin) * 2);
-        object-fit: contain;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
       }
     }
   }
