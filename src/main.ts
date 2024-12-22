@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-imports */
 import { Icon } from "@iconify/vue";
 import { createApp } from "vue";
 import App from "./App.vue";
@@ -9,7 +10,15 @@ import "@/assets/css/transition.scss";
 import "@/assets/css/main.scss";
 //  #endregion
 
+// #region : v-viewer
+import "viewerjs/dist/viewer.css";
+import VueViewer from "v-viewer";
+// #endregion
+
 const app = createApp(App);
+
+// Plugins
+app.use(VueViewer);
 
 // Global Component
 app.component("Icon", Icon);

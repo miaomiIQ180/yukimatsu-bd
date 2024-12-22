@@ -1,6 +1,16 @@
 <template>
   <main class="main-content">
-    <div class="main-content__img"><img src="/picture1.jpg"></div>
+    <div
+      v-viewer.static="{
+        title: false,
+        navbar: false,
+        toolbar: false,
+        tooltip: false,
+      }"
+      class="main-content__img"
+    >
+      <img src="/picture2.jpg">
+    </div>
     <div class="main-content__text">
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit ratione, dolor vel, cumque illum modi deleniti, quae provident fugiat et sequi corporis veniam tenetur eos officia similique iste molestias magni.</p>
       <p>Repellendus corrupti accusamus cum voluptates odio commodi doloribus vero laborum eum nisi ut error consequatur, veritatis beatae voluptatem, corporis ducimus animi exercitationem quidem ipsam ratione. Libero asperiores facilis sit nesciunt?</p>
@@ -22,12 +32,13 @@ const showGiftBox = ref(false);
 
 <style lang="scss" scoped>
 .main-content {
+  --margin: 1.5rem;
   font-size: 1.25rem;
   display: grid;
   place-items: center;
-  gap: 2rem;
+  gap: var(--margin);
   height: 100%;
-  padding: 2rem;
+  padding: var(--margin);
   overflow: auto;
 }
 
@@ -48,10 +59,10 @@ const showGiftBox = ref(false);
     .main-content__img {
       img {
         position: fixed;
-        left: 2rem;
+        left: var(--margin);
         top: 50%;
-        width: calc(50% - 3rem);
-        max-height: calc(100% - 4rem);
+        width: calc(50% - var(--margin) * 1.5);
+        max-height: calc(100% - var(--margin) * 2);
         object-fit: contain;
         transform: translateY(-50%);
       }
