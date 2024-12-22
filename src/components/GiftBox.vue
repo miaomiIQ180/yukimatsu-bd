@@ -3,9 +3,9 @@
     <div class="giftbox__wrapper">
       <ConfettiExplosion
         v-if="isOpened"
-        :force="0.6"
-        :stage-width="2000"
-        :stage-height="2000"
+        :force="0.7"
+        :stage-width="windowWidth * 1.75"
+        :stage-height="windowHeight * 1.75"
       />
       <button
         type="button"
@@ -16,7 +16,7 @@
         <Icon v-show="isOpened" icon="streamline-emojis:wrapped-gift-2" />
         <Icon v-show="!isOpened" icon="streamline-emojis:wrapped-gift-1" />
       </button>
-      <div v-show="showClickMe" class="click-me"><Icon icon="mynaui:click-solid" /></div>
+      <div v-show="showClickMe && !isOpened" class="click-me"><Icon icon="mynaui:click-solid" /></div>
     </div>
   </div>
 </template>
@@ -30,9 +30,10 @@ const emit = defineEmits<{
 
 const isOpened = ref<boolean>(false);
 const showClickMe = ref<boolean>(false);
+const { width: windowWidth, height: windowHeight } = useWindowSize();
 
 function handleClick() {
-  isOpened.value = !isOpened.value;
+  isOpened.value = true;
   showClickMe.value = false;
   useTimeoutFn(() => {
     emit("giftOpened");

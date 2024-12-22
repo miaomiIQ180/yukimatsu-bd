@@ -26,8 +26,7 @@
 </template>
 
 <script setup lang="ts">
-// FIXME: Use LocalStorge
-const showGiftBox = ref(false);
+const showGiftBox = ref(true);
 </script>
 
 <style lang="scss" scoped>
